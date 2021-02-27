@@ -12,8 +12,12 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private int spawnIndex = 0;
     public List<ThisLevel> levelSeen;
     private int howManyEnemiesToSpawn = 0;
+    public int passedbyTheSame = 0;
 
     private Vector3 lastEndPosition;
+
+    private bool isCompleted;
+    
     private void Awake()
     {
         levelinstance = this;
@@ -30,10 +34,9 @@ public class LevelGenerator : MonoBehaviour
         //Transform chosenLevelPart = levelParts[spawnIndex];
         Transform lastlevelPartTransform = SpawnLevelPart(spawnIndex,lastEndPosition);
         ThisLevel thislevel = lastlevelPartTransform.gameObject.GetComponent<ThisLevel>();
-
+        DialogueManager.instance.transform.position = lastlevelPartTransform.Find("ChadPos").position;
         // set the right direction
-        
-        thislevel.pathArray[index].isTheRightDirection = true;
+        PutTheRightPath(index, thislevel);
         levelSeen.Add(thislevel);
         lastEndPosition = lastlevelPartTransform.Find("EndPosition").position;
     }
@@ -85,16 +88,41 @@ public class LevelGenerator : MonoBehaviour
             spawnIndex = 0;
             
         }
-        // reset how many enemies gonna spawn
+        // reset how many enemies gonna spawn and how many passed
         howManyEnemiesToSpawn = -1;
+        passedbyTheSame = 0;
     }
     public void SpawnAnother(int index )
     {
+        passedbyTheSame++;
         // Spawn another level part
         SpawnLevel(index);
         if(levelSeen.Count >= 3)
         {
             SendToPool();
+        }
+    }
+    private void PutTheRightPath(int index, ThisLevel thislevel)
+    {
+        switch (spawnIndex)
+        {
+            case 0:
+                // set the right direction
+
+                thislevel.pathArray[index].isTheRightDirection = true;
+                Debug.Log("1");
+                break;
+            default:
+                int rng = Random.Range(0, 3);
+                thislevel.pathArray[rng].isTheRightDirection = true;
+                Debug.Log("2");
+                break;
+            
+            case 1:
+                thislevel.pathArray[0].isTheRightDirection = true;
+                Debug.Log("4");
+                break;
+
         }
     }
 }

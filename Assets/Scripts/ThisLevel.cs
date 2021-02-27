@@ -10,6 +10,7 @@ public class ThisLevel : MonoBehaviour
     {
         public GameObject TriggerPath;
         public bool isTheRightDirection;
+        public DialogueTrigger dialogueTrigger;
     }
     public Path[] pathArray;
 
@@ -29,15 +30,13 @@ public class ThisLevel : MonoBehaviour
     }
     public enum Levels
     {
-        Level1, Level2,
+        Level1, Level2, Level3, Level4
     }
     public Levels level;
     private void Awake()
     {
         for (int i = 0; i < transform.childCount; i++ )
-        {
-            Debug.Log(transform.GetChild(i).name);
-            
+        {   
             if(transform.GetChild(i).TryGetComponent<Enemy>(out Enemy enemy))
             {
 
@@ -67,10 +66,15 @@ public class ThisLevel : MonoBehaviour
             
             if(path.TriggerPath == triggerCollided)
             {
-                // it's this triggered that playes has triggered
+                // if this trigger is the right direction that player has passeed
                 if (path.isTheRightDirection)
                 {
                     LevelGenerator.levelinstance.IncrementIndex();
+                    path.dialogueTrigger.TriggerDialogue(true, 0);
+                }
+                else
+                {
+                    path.dialogueTrigger.TriggerDialogue(false, LevelGenerator.levelinstance.passedbyTheSame);
                 }
                 LevelGenerator.levelinstance.SpawnAnother(index);
                 return;

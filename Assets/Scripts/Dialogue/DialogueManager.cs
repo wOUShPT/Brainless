@@ -10,8 +10,9 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
 
     public static DialogueManager instance;
+    private bool isPlayerOnTrigger;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(instance == null)
         {
@@ -23,12 +24,14 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E) && isPlayerOnTrigger)
+        {
+            DisplayNextSentence();
+        }
     }
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Starting conversation with " + dialogue.name);
-
+        dialogueText.text = "";
         sentences.Clear();
 
         foreach(string sentence in dialogue.sentences)
@@ -41,28 +44,44 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        dialogueText.text = "";
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
         string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
-        StopCoroutine(TypeSentence(sentence));
+        
+        StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
     IEnumerator TypeSentence(string sentence)
     {
-        dialogueText.text = "";
+        //dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
     private void EndDialogue()
     {
         Debug.Log("EndOfConversation");
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerOnTrigger = true;
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerOnTrigger = false;
+        }
     }
 }

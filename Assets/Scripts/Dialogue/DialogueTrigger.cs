@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public Dialogue[] dejaVuhdialogue;
+    public Dialogue[] passDialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,24 @@ public class DialogueTrigger : MonoBehaviour
     {
         
     }
-    public void TriggerDialogue()
+    public void TriggerDialogue(bool haspassed, int whichDialogueTrigger)
     {
-        DialogueManager.instance.StartDialogue(dialogue);
+
+        if (haspassed)
+        {
+            // Trigger a pass Dialogue
+            
+            DialogueManager.instance.StartDialogue(passDialogue[0]);
+        }
+        else
+        {
+            //Trigger a dejavu Dialogue
+            if(whichDialogueTrigger >= passDialogue.Length)
+            {
+                whichDialogueTrigger = passDialogue.Length - 1;
+            }
+            DialogueManager.instance.StartDialogue(dejaVuhdialogue[whichDialogueTrigger]);
+        }
+        
     }
 }

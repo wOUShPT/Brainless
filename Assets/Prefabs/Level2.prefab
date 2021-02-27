@@ -1318,6 +1318,7 @@ Transform:
   - {fileID: 2845105136090550019}
   - {fileID: 8331514931394633684}
   - {fileID: 7656659654051149707}
+  - {fileID: 438302592614653204}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1336,10 +1337,13 @@ MonoBehaviour:
   pathArray:
   - TriggerPath: {fileID: 3606332972607874165}
     isTheRightDirection: 0
+    dialogueTrigger: {fileID: 8707615554194264403}
   - TriggerPath: {fileID: 3228175598148444085}
     isTheRightDirection: 0
+    dialogueTrigger: {fileID: 494766140763112801}
   - TriggerPath: {fileID: 8693275367308202514}
     isTheRightDirection: 0
+    dialogueTrigger: {fileID: 5102606068409579631}
   enemyList: []
   enemiesToSpawn: 0
   level: 1
@@ -1354,6 +1358,7 @@ GameObject:
   - component: {fileID: 6024616811480498607}
   - component: {fileID: 3920047753739991719}
   - component: {fileID: 2756248620888436186}
+  - component: {fileID: 494766140763112801}
   m_Layer: 0
   m_Name: TriggerCollider1 (1)
   m_TagString: Untagged
@@ -1413,6 +1418,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8462100b71479c34f9a468f3918fcfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &494766140763112801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228175598148444085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfcc92ad5296f24781478fa2a158d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dejaVuhdialogue:
+  - sentences:
+    - Deja Vu Deja vu
+    - Deja vu???
+  - sentences:
+    - Deja vu!!
+    - I was in this place before, higher on the steet
+  passDialogue:
+  - sentences:
+    - How can you be so damn?
+    - glad i'm not you cause....
+    - I'm the best, P for Perfection
+  - sentences:
+    - 'What? Who the devils are you? '
+    - Don't tell me I don't really care.
+    - Since I have a superior INTELLECT, it is obvious  you are a FILTHY creature
+      that wants to torment my Human.
+    - 'Don''t worry BRUH, I will not stop you. '
+    - Have Fun, finding the BRAIN!!!
 --- !u!1 &3606332972607874165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1460,7 @@ GameObject:
   - component: {fileID: 633902358529749109}
   - component: {fileID: 8541922889259393716}
   - component: {fileID: 3577918460122214075}
+  - component: {fileID: 8707615554194264403}
   m_Layer: 0
   m_Name: TriggerCollider1
   m_TagString: Untagged
@@ -1483,6 +1520,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8462100b71479c34f9a468f3918fcfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8707615554194264403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606332972607874165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfcc92ad5296f24781478fa2a158d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dejaVuhdialogue:
+  - sentences:
+    - Deja Vu Deja vu
+    - Deja vu???
+  - sentences:
+    - Deja vu!!
+    - I was in this place before, higher on the steet
+  passDialogue:
+  - sentences:
+    - How can you be so damn?
+    - glad i'm not you cause....
+    - I'm the best, P for Perfection
+  - sentences:
+    - 'What? Who the devils are you? '
+    - Don't tell me I don't really care.
+    - Since I have a superior INTELLECT, it is obvious  you are a FILTHY creature
+      that wants to torment my Human.
+    - 'Don''t worry BRUH, I will not stop you. '
+    - Have Fun, finding the BRAIN!!!
+--- !u!1 &6925870038443386477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438302592614653204}
+  m_Layer: 0
+  m_Name: ChadPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438302592614653204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925870038443386477}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 60.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1653871861058666026}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8693275367308202514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1592,7 @@ GameObject:
   - component: {fileID: 2063793213922879309}
   - component: {fileID: 70536652755731769}
   - component: {fileID: 9203473364310792374}
+  - component: {fileID: 5102606068409579631}
   m_Layer: 0
   m_Name: TriggerCollider1 (2)
   m_TagString: Untagged
@@ -1553,6 +1652,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8462100b71479c34f9a468f3918fcfee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5102606068409579631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693275367308202514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfcc92ad5296f24781478fa2a158d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dejaVuhdialogue:
+  - sentences:
+    - Deja Vu Deja vu
+    - Deja vu???
+  - sentences:
+    - Deja vu!!
+    - I was in this place before, higher on the steet
+  passDialogue:
+  - sentences:
+    - How can you be so damn?
+    - glad i'm not you cause....
+    - I'm the best, P for Perfection
+  - sentences:
+    - 'What? Who the devils are you? '
+    - Don't tell me I don't really care.
+    - Since I have a superior INTELLECT, it is obvious  you are a FILTHY creature
+      that wants to torment my Human.
+    - 'Don''t worry BRUH, I will not stop you. '
+    - Have Fun, finding the BRAIN!!!
 --- !u!1001 &560074749881935942
 PrefabInstance:
   m_ObjectHideFlags: 0
