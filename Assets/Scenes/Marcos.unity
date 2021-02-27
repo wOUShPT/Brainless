@@ -208,7 +208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.23600002}
 --- !u!50 &193774012
 Rigidbody2D:
@@ -347,7 +347,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &878231522 stripped
 MonoBehaviour:
@@ -467,7 +467,7 @@ Transform:
   m_LocalScale: {x: 9.699912, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -550,7 +550,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1129233162
 GameObject:
@@ -585,10 +585,13 @@ MonoBehaviour:
   levelParts:
   - {fileID: 3419227832004942005, guid: d875f74bcfee5444fa3bb31099c690d6, type: 3}
   - {fileID: 1653871861058666026, guid: 1ade5b4241135c64d8015ded1b2391c7, type: 3}
+  - {fileID: 5416934228936945571, guid: 0606690ee7c961f41ae87ba13cc101ac, type: 3}
+  - {fileID: 8643640208860835412, guid: a3ba8bd96bffefa439f7d0836920999b, type: 3}
   enemy: {fileID: 1204671394}
   spawnIndex: 0
   levelSeen:
   - {fileID: 878231522}
+  passedbyTheSame: 0
 --- !u!4 &1129233164
 Transform:
   m_ObjectHideFlags: 0
@@ -601,7 +604,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1204671394 stripped
 MonoBehaviour:
@@ -679,7 +682,135 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1798831880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798831882}
+  - component: {fileID: 1798831881}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1798831881
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798831880}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 27d5998721f654148b7dac0f56f3b971,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 7581f1485ab9fe34bb7d7954586043a9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1798831882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798831880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.266062, y: 29.46772, z: -18.711218}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871544024
 GameObject:
@@ -725,7 +856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991188745
 GameObject:
@@ -755,7 +886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1517652679526135751
 PrefabInstance:
@@ -777,7 +908,7 @@ PrefabInstance:
     - target: {fileID: 1517652680479007846, guid: df252be073a826141b93dcb35994c48c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1517652680479007846, guid: df252be073a826141b93dcb35994c48c,
         type: 3}
@@ -841,7 +972,7 @@ PrefabInstance:
     - target: {fileID: 1653871861058666026, guid: 1ade5b4241135c64d8015ded1b2391c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1653871861058666026, guid: 1ade5b4241135c64d8015ded1b2391c7,
         type: 3}
@@ -912,97 +1043,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: dejaVuhdialogue.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[0].sentences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[1].sentences.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: dejaVuhdialogue.Array.data[0].sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: dejaVuhdialogue.Array.data[1].sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[0].sentences.Array.data[0]
-      value: How can you be so damn?
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[0].sentences.Array.data[1]
-      value: glad i'm not you cause....
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[0].sentences.Array.data[2]
-      value: I'm the best, P for Perfection
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[1].sentences.Array.data[0]
-      value: 'What? Who the devils are you? '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[1].sentences.Array.data[1]
-      value: Don't tell me I don't really care.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[1].sentences.Array.data[2]
-      value: Since I have a superior INTELLECT, it is obvious  you are a FILTHY creature
-        that wants to torment my Human.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[1].sentences.Array.data[3]
-      value: 'Don''t worry BRUH, I will not stop you. '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: passDialogue.Array.data[1].sentences.Array.data[4]
-      value: Have Fun, finding the BRAIN!!!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: dejaVuhdialogue.Array.data[0].sentences.Array.data[0]
-      value: Deja Vu Deja vu
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: dejaVuhdialogue.Array.data[0].sentences.Array.data[1]
-      value: Deja vu???
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: dejaVuhdialogue.Array.data[1].sentences.Array.data[0]
-      value: Deja vu!!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2347702523117162919, guid: d875f74bcfee5444fa3bb31099c690d6,
-        type: 3}
-      propertyPath: dejaVuhdialogue.Array.data[1].sentences.Array.data[1]
-      value: I was in this place before, higher on the steet
-      objectReference: {fileID: 0}
     - target: {fileID: 3419227831819869445, guid: d875f74bcfee5444fa3bb31099c690d6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1026,7 +1066,7 @@ PrefabInstance:
     - target: {fileID: 3419227832004942005, guid: d875f74bcfee5444fa3bb31099c690d6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3419227832004942005, guid: d875f74bcfee5444fa3bb31099c690d6,
         type: 3}
@@ -1100,7 +1140,7 @@ PrefabInstance:
     - target: {fileID: 6641865412326096584, guid: 930cfb33049adcc4ea69d4ca46e42d2b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6641865412326096584, guid: 930cfb33049adcc4ea69d4ca46e42d2b,
         type: 3}
@@ -1169,7 +1209,7 @@ PrefabInstance:
     - target: {fileID: 9066614979018357007, guid: 555f920aa6c7c144eba8906614e76d05,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9066614979018357007, guid: 555f920aa6c7c144eba8906614e76d05,
         type: 3}
@@ -1243,7 +1283,7 @@ PrefabInstance:
     - target: {fileID: 8481910918067204891, guid: 4b400991f28896045b9e103141fbae49,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8481910918067204891, guid: 4b400991f28896045b9e103141fbae49,
         type: 3}
