@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Resources;
 using TMPro;
 using UnityEngine;
@@ -9,92 +10,99 @@ public class PlayerBehaviour : MonoBehaviour
 {
     public GameObject Player;
     public LayerMask groundLayer;
+    public LayerMask wallLayer;
     public float HorizontalVelocity = 3;
     public float JumpVelocity = 2;
-    public int NumberOfRaysToGround = 3;
+    public float groundContactRaySpread;
     [Range(0f, 0.1f)] public float GroundContactTolerance = 0.005f;
-    private bool IsGrounded;
+    private bool OnGround;
+    private bool OnWall;
     private Rigidbody2D playerRigidBody;
     private BoxCollider2D playerCollider;
     private float HorizontalInputDirection;
     public bool CanPlayerMove;
     private bool isContactingFront;
     public float checkRadius;
-    public float xWallForce;
-    public float yWallForce;
     public Vector3 wallCheckOffSet;
-    private bool wallSliding;
-    private bool wallJumping;
-    public float WallSlidingSpeed;
+    private float wallSlidingSpeed;
     void Awake()
     {
         playerRigidBody = Player.GetComponent<Rigidbody2D>();
         playerCollider = playerRigidBody.GetComponent<BoxCollider2D>();
-        IsGrounded = false;
+        OnGround = false;
+        OnWall = false;
         CanPlayerMove = true;
     }
 
     void FixedUpdate()
     {
-        if (CanPlayerMove)
-        {
-            HorizontalMove();
-        }
+        HorizontalMove();
     }
 
     void Update()
     {
         HorizontalInputDirection = Input.GetAxis("Horizontal");
-        if (IsGrounded)
+        CheckContacts();
+        if (Input.GetButtonDown("Jump") && OnGround)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && CanPlayerMove)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                IsGrounded = false;
                 Jump();
             }
         }
-        
-        isContactingFront = Physics2D.OverlapCircle(new Vector2(transform.position.x + HorizontalInputDirection, transform.position.y), checkRadius, groundLayer);
-
     }
 
     private void HorizontalMove()
-    { 
-        playerRigidBody.velocity = new Vector2(HorizontalInputDirection * HorizontalVelocity, playerRigidBody.velocity.y);
+    {
+        if (CanPlayerMove)
+        {
+            playerRigidBody.velocity = new Vector2(HorizontalInputDirection * HorizontalVelocity, playerRigidBody.velocity.y);
+        }
     }
 
     private void Jump()
     {
-        Vector2 jumpForce = new Vector2(0, JumpVelocity);
-        playerRigidBody.AddForce(jumpForce, ForceMode2D.Impulse);
+        if (CanPlayerMove)
+        {
+            OnGround = false;
+            Vector2 jumpForce = new Vector2(0, JumpVelocity);
+            playerRigidBody.AddForce(jumpForce, ForceMode2D.Impulse);
+        }
     }
 
-    private bool DetectGround()
+    private void CheckContacts()
     {
+        OnGround = false;
+        OnWall = false;
+        
         Vector2 origin = playerCollider.transform.position;
         Vector2 direction = Vector2.down;
         Vector2 originOffSet = new Vector2(origin.x, origin.y);
-        RaycastHit2D hit = Physics2D.Raycast(originOffSet, direction,
-            (playerCollider.size.y / 2) + GroundContactTolerance, groundLayer);
-        Debug.DrawRay(originOffSet, direction * ((playerCollider.size.y / 2) + GroundContactTolerance), Color.blue);
-        return hit;
+        RaycastHit2D groundLeftHit = Physics2D.Raycast(new Vector2(originOffSet.x - groundContactRaySpread, originOffSet.y), direction, (playerCollider.size.y / 2) + GroundContactTolerance, groundLayer);
+        RaycastHit2D groundRightHit = Physics2D.Raycast(new Vector2(originOffSet.x + groundContactRaySpread, originOffSet.y), direction, (playerCollider.size.y / 2) + GroundContactTolerance, groundLayer);
+        Debug.DrawRay(new Vector2(originOffSet.x - groundContactRaySpread, originOffSet.y), direction * ((playerCollider.size.y / 2) + GroundContactTolerance), Color.blue);
+        Debug.DrawRay(new Vector2(originOffSet.x + groundContactRaySpread, originOffSet.y), direction * ((playerCollider.size.y / 2) + GroundContactTolerance), Color.blue);
+
+        if (groundLeftHit || groundRightHit)
+        {
+            Debug.Log("Grounded");
+            OnGround = true;
+        }
+
+        bool leftWallcontact = Physics2D.OverlapCircle(transform.position - wallCheckOffSet, checkRadius, wallLayer);
+        bool righWallContact = Physics2D.OverlapCircle(transform.position + wallCheckOffSet, checkRadius, wallLayer);
+
+        if (leftWallcontact || righWallContact)
+        {
+            OnWall = true;
+        }
     }
     
 
-    void SetWallJumpingToFalse()
+    private void OnDrawGizmos()
     {
-        wallJumping = false;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position - wallCheckOffSet, checkRadius);
+        Gizmos.DrawWireSphere(transform.position + wallCheckOffSet, checkRadius);
     }
-
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        IsGrounded = DetectGround();
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        IsGrounded = false;
-    }
-    
-    
 }

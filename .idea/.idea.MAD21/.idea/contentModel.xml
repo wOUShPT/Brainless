@@ -8,7 +8,12 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="CameraPan.cs" t="Include" />
+          <e p="Enemy.cs" t="Include" />
+          <e p="LevelGenerator.cs" t="Include" />
+          <e p="NextLevelTrigger.cs" t="Include" />
           <e p="PlayerBehaviour.cs" t="Include" />
+          <e p="Spikes.cs" t="Include" />
+          <e p="ThisLevel.cs" t="Include" />
         </e>
       </e>
       <e p="MAD21.sln" t="IncludeFlat" />

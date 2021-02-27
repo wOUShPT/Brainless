@@ -20,7 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc9bc7e8-cc5e-4eaf-9ff9-092e7172d994" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gustavo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gustavo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraPan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraPan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +89,8 @@
       <option name="presentableId" value="Default" />
       <updated>1614367904652</updated>
       <workItem from="1614367907595" duration="17572000" />
+      <workItem from="1614388894055" duration="2459000" />
+      <workItem from="1614391486034" duration="1213000" />
     </task>
     <servers />
   </component>
@@ -102,6 +109,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

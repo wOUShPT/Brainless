@@ -17,7 +17,7 @@ public class CameraPan : MonoBehaviour
         currentCameraVelocity = Vector3.zero;
     }
 
-    void Update()
+    void LateUpdate()
     {
         Vector2 playerDirection = playerRigidbody2D.velocity.normalized;
         Vector3 playerVelocity = Vector3.zero;
