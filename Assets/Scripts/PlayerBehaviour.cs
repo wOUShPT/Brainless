@@ -4,6 +4,7 @@ using System.Resources;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class PlayerBehaviour : MonoBehaviour
@@ -13,66 +14,127 @@ public class PlayerBehaviour : MonoBehaviour
     public LayerMask wallLayer;
     public float HorizontalVelocity = 3;
     public float JumpVelocity = 2;
+    public float horizontalJumpForce;
     public float groundContactRaySpread;
     [Range(0f, 0.1f)] public float GroundContactTolerance = 0.005f;
-    private bool OnGround;
+    private bool onGround;
     private bool OnWall;
     private Rigidbody2D playerRigidBody;
     private BoxCollider2D playerCollider;
     private float HorizontalInputDirection;
-    public bool CanPlayerMove;
+    private int faceDirection = 1;
+    public bool canPlayerMove;
     private bool isContactingFront;
     public float checkRadius;
     public Vector3 wallCheckOffSet;
+    public float wallJumpDuration;
+    public float wallSlideSpeed;
+    private bool jumpFromWall;
+    private bool jumpPressed;
+    private float wallJumpFinishTime;
     private float wallSlidingSpeed;
+    private bool resetInputs;
+    public string enemyTag;
     void Awake()
     {
         playerRigidBody = Player.GetComponent<Rigidbody2D>();
         playerCollider = playerRigidBody.GetComponent<BoxCollider2D>();
-        OnGround = false;
+        onGround = false;
         OnWall = false;
-        CanPlayerMove = true;
+        canPlayerMove = true;
+        resetInputs = false;
+        jumpFromWall = false;
     }
 
     void FixedUpdate()
     {
-        HorizontalMove();
+        HorizontalMovement();
+        Jump();
+        resetInputs = true;
     }
 
     void Update()
     {
-        HorizontalInputDirection = Input.GetAxis("Horizontal");
+        Inputs();
         CheckContacts();
-        if (Input.GetButtonDown("Jump") && OnGround)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-            }
-        }
     }
 
-    private void HorizontalMove()
+    private void HorizontalMovement()
     {
-        if (CanPlayerMove)
+        if (canPlayerMove)
         {
             playerRigidBody.velocity = new Vector2(HorizontalInputDirection * HorizontalVelocity, playerRigidBody.velocity.y);
+
+            if (HorizontalInputDirection * faceDirection < 0f)
+            {
+                FlipPlayer();
+            }
         }
     }
 
     private void Jump()
     {
-        if (CanPlayerMove)
+        if (jumpPressed && onGround)
         {
-            OnGround = false;
+            jumpPressed = false;
             Vector2 jumpForce = new Vector2(0, JumpVelocity);
+            playerRigidBody.velocity = Vector2.zero;
             playerRigidBody.AddForce(jumpForce, ForceMode2D.Impulse);
+        }
+        else if(jumpPressed && OnWall && !onGround)
+        {
+            jumpPressed = false;
+            canPlayerMove = false;
+            wallJumpFinishTime = Time.time + wallJumpDuration;
+            jumpFromWall = true;
+            FlipPlayer();
+            
+            playerRigidBody.velocity = Vector2.zero;
+            playerRigidBody.AddForce(new Vector2(horizontalJumpForce * faceDirection, JumpVelocity), ForceMode2D.Impulse);
         }
     }
 
+    private void Inputs()
+    {
+        if (resetInputs)
+        {
+            jumpPressed = false;
+            resetInputs = false;
+        }
+
+       
+        jumpPressed = jumpPressed || Input.GetButtonDown("Jump");
+
+        if (canPlayerMove)
+        {
+            HorizontalInputDirection = Input.GetAxis("Horizontal");
+        }
+
+        if (jumpFromWall)
+        {
+            if(Time.time > wallJumpFinishTime)
+            {
+                jumpFromWall = false;
+            }
+        }
+
+        if(!jumpFromWall && !canPlayerMove)
+        {
+            if(Input.GetAxis("Horizontal") != 0 || onGround)
+            {
+                canPlayerMove = true;
+            }
+        }
+    }
+
+    private void FlipPlayer()
+    {
+        faceDirection *= -1;
+    }
+    
     private void CheckContacts()
     {
-        OnGround = false;
+        onGround = false;
         OnWall = false;
         
         Vector2 origin = playerCollider.transform.position;
@@ -86,7 +148,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (groundLeftHit || groundRightHit)
         {
             Debug.Log("Grounded");
-            OnGround = true;
+            onGround = true;
         }
 
         bool leftWallcontact = Physics2D.OverlapCircle(transform.position - wallCheckOffSet, checkRadius, wallLayer);
@@ -96,8 +158,24 @@ public class PlayerBehaviour : MonoBehaviour
         {
             OnWall = true;
         }
+        
+        if (OnWall)
+        {
+            if(playerRigidBody.velocity.y < wallSlideSpeed)
+            {
+                playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, wallSlideSpeed);
+            }
+        }
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag(enemyTag))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
 
     private void OnDrawGizmos()
     {
