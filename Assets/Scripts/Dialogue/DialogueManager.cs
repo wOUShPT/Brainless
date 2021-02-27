@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private Text dialogueText;
+    //[SerializeField] private Text dialogueText;
+    [SerializeField]private TextMeshPro dialogueText;
     private Queue<string> sentences;
 
     public static DialogueManager instance;
@@ -14,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        dialogueText = FindObjectOfType<TextMeshPro>();
         if(instance == null)
         {
             instance = this;
