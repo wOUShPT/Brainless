@@ -7,11 +7,24 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ButtonsBehaviour.cs" t="Include" />
           <e p="CameraPan.cs" t="Include" />
+          <e p="Dialogue" t="Include">
+            <e p="Dialogue.cs" t="Include" />
+            <e p="DialogueManager.cs" t="Include" />
+            <e p="DialogueTrigger.cs" t="Include" />
+          </e>
           <e p="Enemy.cs" t="Include" />
+          <e p="InitialDialogue.cs" t="Include" />
           <e p="LevelGenerator.cs" t="Include" />
           <e p="NextLevelTrigger.cs" t="Include" />
+          <e p="ParallaxBackground.cs" t="Include" />
           <e p="PlayerBehaviour.cs" t="Include" />
+          <e p="Pool" t="Include">
+            <e p="GenericLevelPool.cs" t="Include" />
+            <e p="LevelPool.cs" t="Include" />
+          </e>
+          <e p="SetVolume.cs" t="Include" />
           <e p="Spikes.cs" t="Include" />
           <e p="ThisLevel.cs" t="Include" />
         </e>

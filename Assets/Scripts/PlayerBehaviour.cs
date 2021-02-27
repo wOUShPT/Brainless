@@ -176,6 +176,14 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(enemyTag))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
 
     private void OnDrawGizmos()
     {
