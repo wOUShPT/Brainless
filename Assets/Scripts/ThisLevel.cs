@@ -12,6 +12,12 @@ public class ThisLevel : MonoBehaviour
         public bool isTheRightDirection;
     }
     public Path[] pathArray;
+
+    public enum Levels
+    {
+        Level1, Level2,
+    }
+    public Levels level;
     // Start is called before the first frame update
     void Start()
     {

@@ -10,7 +10,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private List<Transform> levelParts;
     [SerializeField] private Enemy enemy;
     [SerializeField] private int spawnIndex = 0;
-    public List<Transform> levelHaven;
+    public List<ThisLevel> levelSeen;
 
     private Vector3 lastEndPosition;
     private void Awake()
@@ -26,18 +26,39 @@ public class LevelGenerator : MonoBehaviour
     }
     private void SpawnLevel(int index)
     {
-        Transform chosenLevelPart = levelParts[spawnIndex];
-        Transform lastlevelPartTransform = SpawnLevelPart(chosenLevelPart,lastEndPosition);
+        //Transform chosenLevelPart = levelParts[spawnIndex];
+        Transform lastlevelPartTransform = SpawnLevelPart(spawnIndex,lastEndPosition);
         ThisLevel thislevel = lastlevelPartTransform.gameObject.GetComponent<ThisLevel>();
+        //ResetRightPath(thislevel);
         // set the right direction
         thislevel.pathArray[index].isTheRightDirection = true;
+        levelSeen.Add(thislevel);
         lastEndPosition = lastlevelPartTransform.Find("EndPosition").position;
     }
-    private Transform SpawnLevelPart(Transform levelPart,Vector3 spawnPosition)
+    private Transform SpawnLevelPart(int levelPartIndex,Vector3 spawnPosition)
     {
         // Instantiate the level prefab
-        Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
+        ThisLevel levelPartScript = LevelPool.instance.Get(levelPartIndex);
+        levelPartScript.transform.position = spawnPosition;
+        Transform levelPartTransform = levelPartScript.transform;
+        levelPartTransform.gameObject.SetActive(true);
+        //Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
         return levelPartTransform;
+    }
+    private void SendToPool()
+    {
+        ResetRightPath(levelSeen[0]);
+        LevelPool.instance.ReturnToPool(levelSeen[0]);
+        
+        levelSeen.RemoveAt(0);
+    }
+    public void ResetRightPath(ThisLevel level)
+    {
+        for(int i = 0; i < level.pathArray.Length -1; i++)
+        {
+            level.pathArray[i].isTheRightDirection = false;
+            level.pathArray[i].TriggerPath.GetComponent<NextLevelTrigger>().AlreadyPassed = false;
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -66,5 +87,9 @@ public class LevelGenerator : MonoBehaviour
     {
         // Spawn another level part
         SpawnLevel(index);
+        if(levelSeen.Count >= 3)
+        {
+            SendToPool();
+        }
     }
 }

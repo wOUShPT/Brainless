@@ -6,6 +6,13 @@ public class NextLevelTrigger : MonoBehaviour
 {
     private ThisLevel thisLevel;
     private bool alreadyPassed = false;
+    public bool AlreadyPassed
+    {
+        set
+        {
+            alreadyPassed = value;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
