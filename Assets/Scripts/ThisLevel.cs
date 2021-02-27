@@ -17,6 +17,9 @@ public class ThisLevel : MonoBehaviour
     public List<GameObject> enemyList;
 
     [SerializeField]private int enemiesToSpawn = 0;
+    private AudioSource audioSource;
+    [SerializeField]private AudioClip passClip;
+    [SerializeField] private AudioClip failedClip;
     public int EnemiesToSpawn
     {
         set
@@ -44,6 +47,7 @@ public class ThisLevel : MonoBehaviour
             }
             
         }
+        audioSource = GetComponent<AudioSource>();
         DisablingEnemies();
     }
     // Start is called before the first frame update
@@ -71,10 +75,12 @@ public class ThisLevel : MonoBehaviour
                 {
                     LevelGenerator.levelinstance.IncrementIndex();
                     path.dialogueTrigger.TriggerDialogue(true, 0);
+                    audioSource.PlayOneShot(passClip);
                 }
                 else
                 {
                     path.dialogueTrigger.TriggerDialogue(false, LevelGenerator.levelinstance.passedbyTheSame);
+                    audioSource.PlayOneShot(failedClip);
                 }
                 LevelGenerator.levelinstance.SpawnAnother(index);
                 return;
