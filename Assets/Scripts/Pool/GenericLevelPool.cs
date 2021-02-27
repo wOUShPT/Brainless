@@ -34,7 +34,7 @@ public abstract class GenericLevelPool<T> : MonoBehaviour where T : Component
         }
         for(int i = 0; i < levels.Count; i++)
         {
-            Debug.Log(levels[i].GetComponent<ThisLevel>().level + "," + prefab[wantedPrefab].GetComponent<ThisLevel>().level);
+            
             if(levels[i].GetComponent<ThisLevel>().level == prefab[wantedPrefab].GetComponent<ThisLevel>().level)
             {
                 Debug.Log("É este!!");

@@ -11,6 +11,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private Enemy enemy;
     [SerializeField] private int spawnIndex = 0;
     public List<ThisLevel> levelSeen;
+    private int howManyEnemiesToSpawn = 0;
 
     private Vector3 lastEndPosition;
     private void Awake()
@@ -29,8 +30,9 @@ public class LevelGenerator : MonoBehaviour
         //Transform chosenLevelPart = levelParts[spawnIndex];
         Transform lastlevelPartTransform = SpawnLevelPart(spawnIndex,lastEndPosition);
         ThisLevel thislevel = lastlevelPartTransform.gameObject.GetComponent<ThisLevel>();
-        //ResetRightPath(thislevel);
+
         // set the right direction
+        
         thislevel.pathArray[index].isTheRightDirection = true;
         levelSeen.Add(thislevel);
         lastEndPosition = lastlevelPartTransform.Find("EndPosition").position;
@@ -41,12 +43,15 @@ public class LevelGenerator : MonoBehaviour
         ThisLevel levelPartScript = LevelPool.instance.Get(levelPartIndex);
         levelPartScript.transform.position = spawnPosition;
         Transform levelPartTransform = levelPartScript.transform;
+        howManyEnemiesToSpawn++;
+        levelPartScript.EnemiesToSpawn = howManyEnemiesToSpawn;
         levelPartTransform.gameObject.SetActive(true);
         //Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
         return levelPartTransform;
     }
     private void SendToPool()
     {
+        // return to the pool to be available to use it again
         ResetRightPath(levelSeen[0]);
         LevelPool.instance.ReturnToPool(levelSeen[0]);
         
@@ -54,7 +59,7 @@ public class LevelGenerator : MonoBehaviour
     }
     public void ResetRightPath(ThisLevel level)
     {
-        for(int i = 0; i < level.pathArray.Length -1; i++)
+        for(int i = 0; i < level.pathArray.Length; i++)
         {
             level.pathArray[i].isTheRightDirection = false;
             level.pathArray[i].TriggerPath.GetComponent<NextLevelTrigger>().AlreadyPassed = false;
@@ -69,19 +74,19 @@ public class LevelGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Vector2.Distance(enemy.gameObject.transform.position, lastEndPosition) < playerDistanceSpawnLevelPart)
-        //{
-        //    // Spawn another level part
-        //    SpawnLevel();
-        //}
+        
     }
     public void IncrementIndex()
     {
         spawnIndex++;
         if(spawnIndex >= levelParts.Count)
         {
+            
             spawnIndex = 0;
+            
         }
+        // reset how many enemies gonna spawn
+        howManyEnemiesToSpawn = -1;
     }
     public void SpawnAnother(int index )
     {

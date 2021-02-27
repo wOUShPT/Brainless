@@ -23,6 +23,11 @@ public class Enemy : MonoBehaviour
         Patrol, Charge
     }
     private States states;
+    private Vector3 initialPosition;
+    private void Awake()
+    {
+        initialPosition = transform.position;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +96,6 @@ public class Enemy : MonoBehaviour
         {
             Flip();
         }
-        Debug.Log(isGrounded());
     }
     private bool canSeeThePlayer(float distanceRaycast)
     {
@@ -149,5 +153,9 @@ public class Enemy : MonoBehaviour
         return raycastHit2D.collider != null;
 
     }
-    
+    private void OnDisable()
+    {
+        transform.position = initialPosition;
+    }
+
 }
