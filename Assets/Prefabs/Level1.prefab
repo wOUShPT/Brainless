@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6543126479918542334}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ChadPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3419227831352730798}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1360,7 +1360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3419227832257743215}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: EndPosition
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -1393,7 +1393,7 @@ GameObject:
   - component: {fileID: 5849961497175594040}
   - component: {fileID: 7062621400871906396}
   - component: {fileID: 1942030606352982533}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TriggerCollider1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   - component: {fileID: 2411762038200744564}
   - component: {fileID: 1301481079347291511}
   - component: {fileID: 7097762746310863069}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TriggerCollider1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,7 +1597,7 @@ GameObject:
   - component: {fileID: 7674625672310462255}
   - component: {fileID: 908198024512647693}
   - component: {fileID: 2347702523117162919}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: TriggerCollider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

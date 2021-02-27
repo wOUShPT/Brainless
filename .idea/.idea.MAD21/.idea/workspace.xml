@@ -97,7 +97,7 @@
       <workItem from="1614388894055" duration="2459000" />
       <workItem from="1614391486034" duration="1213000" />
       <workItem from="1614420773973" duration="6648000" />
-      <workItem from="1614448548014" duration="1327000" />
+      <workItem from="1614448548014" duration="1886000" />
     </task>
     <servers />
   </component>
@@ -120,5 +120,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="4943" y="1304" width="672" height="678" key="search.everywhere.popup" timestamp="1614453909224">
+      <screen x="3840" y="1074" width="1920" height="1020" />
+    </state>
+    <state x="4943" y="1304" width="672" height="678" key="search.everywhere.popup/3840.1074.1920.1020/0.0.2560.1400@3840.1074.1920.1020" timestamp="1614453909224" />
   </component>
 </project>
