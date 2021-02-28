@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
             instance = this;
         }
         sentences = new Queue<string>();
+        audioClipsFromSentences = new Queue<AudioClip>();
     }
 
     // Update is called once per frame
@@ -102,7 +103,11 @@ public class DialogueManager : MonoBehaviour
             else if (!audioSource.isPlaying)
             {
                 // Play music when is not a char with empty space
-                audioSource.PlayOneShot(speakBread);
+                if(audioSource != null)
+                {
+                    audioSource.PlayOneShot(speakBread);
+                }
+                
             }
             if((char.IsUpper(sentence[i]) && sentence[i] != sentence.Length -1))
             {

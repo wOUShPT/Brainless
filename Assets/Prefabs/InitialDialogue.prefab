@@ -53,7 +53,7 @@ MonoBehaviour:
     - Have Fun, finding the BRAIN!!!
     audioClip:
     - {fileID: 8300000, guid: 578a1faa16d29234eb02835de94b1128, type: 3}
-    - {fileID: 8300000, guid: 7ffbe170421821e4695181dd40b3589b, type: 3}
-    - {fileID: 8300000, guid: d4772f6dfe0209244b49739c7d50cfba, type: 3}
-    - {fileID: 8300000, guid: a831cf98804f0a242828e8fe01bdeada, type: 3}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: ada45cdd252b825439a7e1577b1f3dd9, type: 3}
+    - {fileID: 8300000, guid: 7af4c857fccbd7542833ed646d8a38b2, type: 3}
+    - {fileID: 8300000, guid: 4f59821bc6e6dd346ad5340d739d3067, type: 3}
+    - {fileID: 8300000, guid: 410ec940a3bf208458999141d43c85d1, type: 3}

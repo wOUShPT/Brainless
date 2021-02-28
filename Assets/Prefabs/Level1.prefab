@@ -4991,19 +4991,35 @@ MonoBehaviour:
     - "HAHAHAH. Having trouble to find the right path?\r\n    Do you even THINK BRUH?"
     - Thats what you get for being such an IMBECILE.
     - Well move along, I have stuff to do. SCRAM.
+    audioClip:
+    - {fileID: 8300000, guid: 7ffbe170421821e4695181dd40b3589b, type: 3}
+    - {fileID: 8300000, guid: 713722b17ed953141948a35a858e0737, type: 3}
+    - {fileID: 8300000, guid: b3031404f977d024eb97d253444fdbf0, type: 3}
   - sentences:
     - Bruh...This is just getting sad...
     - I can't even look at you anymore...
     - ' Just goo...'
+    audioClip:
+    - {fileID: 8300000, guid: d4772f6dfe0209244b49739c7d50cfba, type: 3}
+    - {fileID: 8300000, guid: c6371aedaeba5014e9dbd6113bf7da04, type: 3}
+    - {fileID: 8300000, guid: b3031404f977d024eb97d253444fdbf0, type: 3}
   - sentences:
     - ' BRUH... THE FUCK!!!'
     - HOW CAN YOU BE SOO DUMB!!!
     - ... ... ...
     - ' Just...Just Take the Third tunel to the right'
+    audioClip:
+    - {fileID: 8300000, guid: a831cf98804f0a242828e8fe01bdeada, type: 3}
+    - {fileID: 8300000, guid: d2a9e925bbfd15946ae434a938a80a88, type: 3}
+    - {fileID: 8300000, guid: a7d8cb5b7fc90b44db52d802be9b8a3f, type: 3}
+    - {fileID: 8300000, guid: a7d8cb5b7fc90b44db52d802be9b8a3f, type: 3}
   passDialogue:
-  - sentences:
-    - "Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
+    sentences:
+    - "- Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
     - Well...Continue.
+    audioClip:
+    - {fileID: 8300000, guid: ab4e372ee94cc6a4b8d138c6838ef71e, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
 --- !u!1 &6719256415570979356
 GameObject:
   m_ObjectHideFlags: 0
@@ -5848,19 +5864,35 @@ MonoBehaviour:
     - "HAHAHAH. Having trouble to find the right path?\r\n    Do you even THINK BRUH?"
     - Thats what you get for being such an IMBECILE.
     - Well move along, I have stuff to do. SCRAM.
+    audioClip:
+    - {fileID: 8300000, guid: 7ffbe170421821e4695181dd40b3589b, type: 3}
+    - {fileID: 8300000, guid: 713722b17ed953141948a35a858e0737, type: 3}
+    - {fileID: 8300000, guid: b3031404f977d024eb97d253444fdbf0, type: 3}
   - sentences:
     - Bruh...This is just getting sad...
     - I can't even look at you anymore...
     - ' Just goo...'
+    audioClip:
+    - {fileID: 8300000, guid: d4772f6dfe0209244b49739c7d50cfba, type: 3}
+    - {fileID: 8300000, guid: c6371aedaeba5014e9dbd6113bf7da04, type: 3}
+    - {fileID: 8300000, guid: b3031404f977d024eb97d253444fdbf0, type: 3}
   - sentences:
     - ' BRUH... THE FUCK!!!'
     - HOW CAN YOU BE SOO DUMB!!!
     - ... ... ...
     - ' Just...Just Take the Third tunel to the right'
+    audioClip:
+    - {fileID: 8300000, guid: a831cf98804f0a242828e8fe01bdeada, type: 3}
+    - {fileID: 8300000, guid: d2a9e925bbfd15946ae434a938a80a88, type: 3}
+    - {fileID: 8300000, guid: a7d8cb5b7fc90b44db52d802be9b8a3f, type: 3}
+    - {fileID: 8300000, guid: a7d8cb5b7fc90b44db52d802be9b8a3f, type: 3}
   passDialogue:
-  - sentences:
-    - "Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
+    sentences:
+    - "- Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
     - Well...Continue.
+    audioClip:
+    - {fileID: 8300000, guid: ab4e372ee94cc6a4b8d138c6838ef71e, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
 --- !u!1 &8125077033415756541
 GameObject:
   m_ObjectHideFlags: 0
@@ -6381,19 +6413,35 @@ MonoBehaviour:
     - "HAHAHAH. Having trouble to find the right path?\r\n    Do you even THINK BRUH?"
     - Thats what you get for being such an IMBECILE.
     - Well move along, I have stuff to do. SCRAM.
+    audioClip:
+    - {fileID: 8300000, guid: 7ffbe170421821e4695181dd40b3589b, type: 3}
+    - {fileID: 8300000, guid: 713722b17ed953141948a35a858e0737, type: 3}
+    - {fileID: 8300000, guid: b3031404f977d024eb97d253444fdbf0, type: 3}
   - sentences:
     - Bruh...This is just getting sad...
     - I can't even look at you anymore...
     - ' Just goo...'
+    audioClip:
+    - {fileID: 8300000, guid: d4772f6dfe0209244b49739c7d50cfba, type: 3}
+    - {fileID: 8300000, guid: c6371aedaeba5014e9dbd6113bf7da04, type: 3}
+    - {fileID: 8300000, guid: b3031404f977d024eb97d253444fdbf0, type: 3}
   - sentences:
     - ' BRUH... THE FUCK!!!'
     - HOW CAN YOU BE SOO DUMB!!!
     - ... ... ...
     - ' Just...Just Take the Third tunel to the right'
+    audioClip:
+    - {fileID: 8300000, guid: a831cf98804f0a242828e8fe01bdeada, type: 3}
+    - {fileID: 8300000, guid: d2a9e925bbfd15946ae434a938a80a88, type: 3}
+    - {fileID: 8300000, guid: a7d8cb5b7fc90b44db52d802be9b8a3f, type: 3}
+    - {fileID: 8300000, guid: a7d8cb5b7fc90b44db52d802be9b8a3f, type: 3}
   passDialogue:
-  - sentences:
-    - "Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
+    sentences:
+    - "- Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
     - Well...Continue.
+    audioClip:
+    - {fileID: 8300000, guid: ab4e372ee94cc6a4b8d138c6838ef71e, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
 --- !u!1 &8812253179830374868
 GameObject:
   m_ObjectHideFlags: 0

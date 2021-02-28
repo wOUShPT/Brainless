@@ -3555,13 +3555,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dejaVuhdialogue:
   - sentences:
-    - Deja Vu Deja vu
-    - Deja vu???
+    - "Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
+    - Well...Continue.
+    audioClip:
+    - {fileID: 8300000, guid: ab4e372ee94cc6a4b8d138c6838ef71e, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
   passDialogue:
-  - sentences:
-    - How can you be so damn?
-    - glad i'm not you cause....
-    - I'm the best, P for Perfection
+    sentences:
+    - ... ... ...
+    - "I know you are DUMB, but I though you would have noticed \r\nit..."
+    - The BRAIN...was here all along..
+    audioClip:
+    - {fileID: 8300000, guid: 028fbf2aef38a6f49b3472f77a1dc18d, type: 3}
+    - {fileID: 8300000, guid: 028fbf2aef38a6f49b3472f77a1dc18d, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
 --- !u!1 &3365749365924296714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3755,12 +3762,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dejaVuhdialogue:
   - sentences:
-    - Deja Vu Deja vu
+    - "Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
+    - Well...Continue.
+    audioClip:
+    - {fileID: 8300000, guid: ab4e372ee94cc6a4b8d138c6838ef71e, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
   passDialogue:
-  - sentences:
-    - How can you be so damn?
-    - glad i'm not you cause....
-    - I'm the best, P for Perfection
+    sentences:
+    - ... ... ...
+    - "I know you are DUMB, but I though you would have noticed \r\nit..."
+    - The BRAIN...was here all along..
+    audioClip:
+    - {fileID: 8300000, guid: 028fbf2aef38a6f49b3472f77a1dc18d, type: 3}
+    - {fileID: 8300000, guid: 028fbf2aef38a6f49b3472f77a1dc18d, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
 --- !u!1 &3612200557213349328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5860,15 +5875,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dejaVuhdialogue:
   - sentences:
-    - Deja Vu Deja vu
-    - Deja vu???
+    - "Hmm...Quite surprising such a LOWLIFE like you managed\r\n  to get here. "
+    - Well...Continue.
+    audioClip:
+    - {fileID: 8300000, guid: ab4e372ee94cc6a4b8d138c6838ef71e, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
   passDialogue:
-  - sentences:
-    - How can you be so damn?
-    - glad i'm not you cause....
-    - I'm the best, P for Perfection
-  - sentences:
-    - 'What? Who the devils are you? '
+    sentences:
+    - ... ... ...
+    - "I know you are DUMB, but I though you would have noticed \r\nit..."
+    - The BRAIN...was here all along..
+    audioClip:
+    - {fileID: 8300000, guid: 028fbf2aef38a6f49b3472f77a1dc18d, type: 3}
+    - {fileID: 8300000, guid: 028fbf2aef38a6f49b3472f77a1dc18d, type: 3}
+    - {fileID: 8300000, guid: e41d90ec38b2db0459999bfbfd03aeb7, type: 3}
 --- !u!1 &8876360734097418190
 GameObject:
   m_ObjectHideFlags: 0
