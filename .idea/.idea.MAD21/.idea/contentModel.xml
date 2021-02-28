@@ -9,6 +9,7 @@
         <e p="Scripts" t="Include">
           <e p="ButtonsBehaviour.cs" t="Include" />
           <e p="CameraPan.cs" t="Include" />
+          <e p="ChadTrigger.cs" t="Include" />
           <e p="Dialogue" t="Include">
             <e p="Dialogue.cs" t="Include" />
             <e p="DialogueManager.cs" t="Include" />
