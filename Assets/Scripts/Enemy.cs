@@ -26,10 +26,10 @@ public class Enemy : MonoBehaviour
         Patrol, Charge
     }
     private States states;
-    //private Vector3 initialPosition;
+    private Vector3 initialPosition;
     private void Awake()
     {
-        //initialPosition = transform.position;
+        initialPosition = transform.position;
     }
     // Start is called before the first frame update
     void Start()
@@ -167,7 +167,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnDisable()
     {
-        //transform.position = initialPosition;
+        transform.position = initialPosition;
     }
 
 }
