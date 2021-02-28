@@ -21,15 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc9bc7e8-cc5e-4eaf-9ff9-092e7172d994" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MAD21/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/EnemyWalk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/EnemyWalk.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Brad.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Brad.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Level2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Level2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/Walk_GRIMAAS.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/braad 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/braad 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/braad 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/braad 2.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
