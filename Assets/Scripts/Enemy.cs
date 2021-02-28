@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private bool isSeeingPlayer;
     private BoxCollider2D bc;
     [SerializeField]private LayerMask groundLayerMask;
+    private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
 
     private enum States
     {
@@ -33,6 +35,8 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         speedDefault = speed;
     }
 
@@ -52,6 +56,7 @@ public class Enemy : MonoBehaviour
                 {
                     states = States.Charge;
                 }
+                _animator.SetTrigger("Patrol");
                 break;
             case States.Charge:
                 if(speed != chargeSpeed)
@@ -65,6 +70,7 @@ public class Enemy : MonoBehaviour
                 }
                 MoveEnemy();
                 CheckGroundDetection();
+                _animator.SetTrigger("Charge");
                 break;
         }
         
@@ -73,6 +79,7 @@ public class Enemy : MonoBehaviour
     {
         // Is facing the other side
         isFacingRight = !isFacingRight;
+        _spriteRenderer.flipX = isFacingRight;
         transform.Rotate(0, 180f, 0);
     }
     private void MoveEnemy()
