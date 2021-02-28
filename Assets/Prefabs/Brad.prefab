@@ -28,14 +28,14 @@ RectTransform:
   m_GameObject: {fileID: 4632181435201466405}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.055866864, y: 0.023941288, z: 0.05586686}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05586686}
   m_Children: []
   m_Father: {fileID: 8481910918067204891}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.2899933, y: 2.2579956}
+  m_AnchoredPosition: {x: -5.68, y: 10.91}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4786337309082725020
@@ -56,7 +56,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6789a0c00e50754439ed625626e02a1b, type: 2}
+  - {fileID: 4887398369887811150, guid: 4dec802ab11e4a94f984da2194b26e1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,7 +76,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
 --- !u!222 &8055051623432271321
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -106,8 +106,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sample text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 6789a0c00e50754439ed625626e02a1b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4dec802ab11e4a94f984da2194b26e1c, type: 2}
+  m_sharedMaterial: {fileID: 4887398369887811150, guid: 4dec802ab11e4a94f984da2194b26e1c,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -167,14 +168,14 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -44.688816, y: -64.38355, z: -45.63424, w: -62.429817}
+  m_margin: {x: -53.605335, y: -51.390003, z: -53.158195, w: -41.09801}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4786337309082725020}
   m_maskType: 0
   _SortingLayerID: 0
-  _SortingOrder: 0
+  _SortingOrder: 11
 --- !u!1 &8481910916811497901
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,8 +210,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00008392334, y: -0.0000076293945}
-  m_SizeDelta: {x: -0.00016784668, y: -0.000015258789}
+  m_AnchoredPosition: {x: -7.6, y: 32}
+  m_SizeDelta: {x: 28.36737, y: 33.87439}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8481910916811497902
 CanvasRenderer:
@@ -285,8 +286,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -5.29, y: 2.258}
-  m_SizeDelta: {x: 110.3749, y: 131.8014}
+  m_AnchoredPosition: {x: -5.27, y: 10.41}
+  m_SizeDelta: {x: 164.65842, y: 196.6227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8481910917574456376
 Canvas:
@@ -307,7 +308,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &8481910917574456377
 MonoBehaviour:
@@ -468,8 +469,8 @@ BoxCollider2D:
   m_Offset: {x: 0.12524414, y: 1.1977081}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.24, y: 4.85}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 4.48, y: 9.7}
     newSize: {x: 2.24, y: 4.85}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
