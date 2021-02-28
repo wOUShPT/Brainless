@@ -35,15 +35,18 @@ public class PlayerBehaviour : MonoBehaviour
     private float wallSlidingSpeed;
     private bool resetInputs;
     public string enemyTag;
+    private Animator _animator;
     void Awake()
     {
         playerRigidBody = Player.GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         playerCollider = playerRigidBody.GetComponent<BoxCollider2D>();
         onGround = false;
         OnWall = false;
         canPlayerMove = true;
         resetInputs = false;
         jumpFromWall = false;
+        SetAnimator();
     }
 
     void FixedUpdate()
@@ -57,6 +60,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Inputs();
         CheckContacts();
+        SetAnimator();
     }
 
     private void HorizontalMovement()
@@ -131,6 +135,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         faceDirection *= -1;
     }
+
+    private void SetAnimator()
+    {
+        _animator.SetFloat("velocity", HorizontalInputDirection);
+        _animator.SetBool("isJumping", !onGround);
+        _animator.SetInteger("isFacingFront", faceDirection);
+        _animator.SetBool("isSliding", OnWall);
+    }
     
     private void CheckContacts()
     {
@@ -151,8 +163,8 @@ public class PlayerBehaviour : MonoBehaviour
             onGround = true;
         }
 
-        bool leftWallcontact = Physics2D.OverlapCircle(transform.position - wallCheckOffSet, checkRadius, wallLayer);
-        bool righWallContact = Physics2D.OverlapCircle(transform.position + wallCheckOffSet, checkRadius, wallLayer);
+        bool leftWallcontact = Physics2D.OverlapCircle(playerCollider.bounds.center - wallCheckOffSet, checkRadius, wallLayer);
+        bool righWallContact = Physics2D.OverlapCircle(playerCollider.bounds.center + wallCheckOffSet, checkRadius, wallLayer);
 
         if (leftWallcontact || righWallContact)
         {
