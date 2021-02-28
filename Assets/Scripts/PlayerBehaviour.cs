@@ -36,6 +36,9 @@ public class PlayerBehaviour : MonoBehaviour
     private bool resetInputs;
     public string enemyTag;
     private Animator _animator;
+    private AudioSource audioSource;
+    public AudioClip footsteps;
+    public AudioClip deathSound;
     void Awake()
     {
         playerRigidBody = Player.GetComponent<Rigidbody2D>();
@@ -46,6 +49,7 @@ public class PlayerBehaviour : MonoBehaviour
         canPlayerMove = true;
         resetInputs = false;
         jumpFromWall = false;
+        audioSource = GetComponent<AudioSource>();
         SetAnimator();
     }
 
@@ -72,6 +76,10 @@ public class PlayerBehaviour : MonoBehaviour
             if (HorizontalInputDirection * faceDirection < 0f)
             {
                 FlipPlayer();
+            }
+            if(playerRigidBody.velocity.x == 0)
+            {
+                audioSource.Stop();
             }
         }
     }
@@ -184,7 +192,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.collider.CompareTag(enemyTag))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            StartCoroutine(LoadActiveScene());
         }
     }
 
@@ -192,8 +201,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (other.CompareTag(enemyTag))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            StartCoroutine(LoadActiveScene());
         }
+    }
+    IEnumerator LoadActiveScene()
+    {
+        audioSource.PlayOneShot(deathSound);
+        yield return new WaitForSeconds(.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
@@ -202,5 +217,11 @@ public class PlayerBehaviour : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position - wallCheckOffSet, checkRadius);
         Gizmos.DrawWireSphere(transform.position + wallCheckOffSet, checkRadius);
+    }
+    public void TriggerSound() // by animator event
+    {
+        if (audioSource.isPlaying)
+            return;
+        audioSource.PlayOneShot(footsteps);
     }
 }

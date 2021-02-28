@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private bool isSeeingPlayer;
     private BoxCollider2D bc;
     [SerializeField]private LayerMask groundLayerMask;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip chargeClip;
 
     private enum States
     {
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         initialPosition = transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
@@ -50,6 +53,7 @@ public class Enemy : MonoBehaviour
                 CheckGroundDetection();
                 if (canSeeThePlayer(agroDistance))
                 {
+                    audioSource.PlayOneShot(chargeClip);
                     states = States.Charge;
                 }
                 break;

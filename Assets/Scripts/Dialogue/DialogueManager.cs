@@ -9,6 +9,10 @@ public class DialogueManager : MonoBehaviour
 {
     //[SerializeField] private Text dialogueText;
     [SerializeField]private TextMeshPro dialogueText;
+    [SerializeField] private Image dialogueBallonImage;
+    
+    [SerializeField] private Sprite speechBubble;
+    //[SerializeField] private Sprite secondSpeechBubble;
     private Queue<string> sentences;
 
     public static DialogueManager instance;
@@ -60,9 +64,24 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator TypeSentence(string sentence)
     {
+        //if (!string.IsNullOrEmpty(sentence))
+        //{
+        //    for (int i = 0; i < sentence.Length; i++)
+        //    {
+        //        if (char.IsUpper(sentence[i]) && char.IsUpper(sentence[i + 1]) && char.IsUpper(sentence[i + 2]))
+        //        {
+        //            dialogueBallonImage.sprite = secondSpeechBubble;
+        //            break;
+        //        }
+        //        dialogueBallonImage.sprite = speechBubble;
+        //    }
+           
+
+        //}
         //dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray())
         {
+            
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.1f);
         }

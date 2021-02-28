@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6aaa4ddf2a374e445ac8254393066dd3
+guid: 4d77ce212faf879448bde8736afc7ef6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8264935355460278841
-    second: braad 1_0
+      213: 1108854507567159195
+    second: braad 2_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 19, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 24, z: 0, w: 26}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -90,22 +90,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: braad 1_0
+      name: braad 2_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 26
-        width: 224
-        height: 485
+        x: 93
+        y: 0
+        width: 364
+        height: 530
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c5293e651d0d4d80800000000000000
-      internalID: -8264935355460278841
+      spriteID: b979127bc41736f00800000000000000
+      internalID: 1108854507567159195
       vertices: []
       indices: 
       edges: []
