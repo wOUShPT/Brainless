@@ -245,7 +245,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1250808662612385756, guid: e09cd7e03c4052c48aac2d9cb6824b68,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -265,13 +265,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193774009}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0020635324, w: 0.9999979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.57, y: 4.5800004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.23600002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &193774012
 Rigidbody2D:
   serializedVersion: 4
@@ -6775,11 +6775,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brad
       objectReference: {fileID: 0}
-    - target: {fileID: 8481910918067204888, guid: 4b400991f28896045b9e103141fbae49,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8481910918067204891, guid: 4b400991f28896045b9e103141fbae49,
         type: 3}
       propertyPath: m_RootOrder
@@ -6793,7 +6788,7 @@ PrefabInstance:
     - target: {fileID: 8481910918067204891, guid: 4b400991f28896045b9e103141fbae49,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.41
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8481910918067204891, guid: 4b400991f28896045b9e103141fbae49,
         type: 3}

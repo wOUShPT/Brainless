@@ -62,6 +62,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         Inputs();
         CheckContacts();
         SetAnimator();
