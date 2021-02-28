@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
         {
             audioClipsFromSentences.Enqueue(audioClip);
         }
-        DisplayNextSentence();
+        //DisplayNextSentence();
     }
 
     private void DisplayNextSentence()
@@ -146,6 +146,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        DisplayNextSentence();
         if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerOnTrigger = true;

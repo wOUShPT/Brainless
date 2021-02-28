@@ -17,6 +17,7 @@ public class LevelGenerator : MonoBehaviour
     private Vector3 lastEndPosition;
 
     private bool isCompleted;
+    private Transform lastlevelPartTransform;
     
     private void Awake()
     {
@@ -32,13 +33,22 @@ public class LevelGenerator : MonoBehaviour
     private void SpawnLevel(int index)
     {
         //Transform chosenLevelPart = levelParts[spawnIndex];
-        Transform lastlevelPartTransform = SpawnLevelPart(spawnIndex,lastEndPosition);
+        lastlevelPartTransform = SpawnLevelPart(spawnIndex,lastEndPosition);
         ThisLevel thislevel = lastlevelPartTransform.gameObject.GetComponent<ThisLevel>();
-        DialogueManager.instance.transform.position = lastlevelPartTransform.Find("ChadPos").position;
+        
         // set the right direction
         PutTheRightPath(index, thislevel);
         levelSeen.Add(thislevel);
         lastEndPosition = lastlevelPartTransform.Find("EndPosition").position;
+    }
+    public void SpawnChad()
+    {
+        //Spawn Chad
+        if(DialogueManager.instance.transform.position != lastlevelPartTransform.Find("ChadPos").position)
+        {
+            DialogueManager.instance.transform.position = lastlevelPartTransform.Find("ChadPos").position;
+        }
+        
     }
     private Transform SpawnLevelPart(int levelPartIndex,Vector3 spawnPosition)
     {
