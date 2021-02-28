@@ -51,3 +51,9 @@ MonoBehaviour:
       creature that wants to torment my Human by giving him Deja Vu."
     - 'Don''t worry BRUH, I will not stop you. '
     - Have Fun, finding the BRAIN!!!
+    audioClip:
+    - {fileID: 8300000, guid: 578a1faa16d29234eb02835de94b1128, type: 3}
+    - {fileID: 8300000, guid: 7ffbe170421821e4695181dd40b3589b, type: 3}
+    - {fileID: 8300000, guid: d4772f6dfe0209244b49739c7d50cfba, type: 3}
+    - {fileID: 8300000, guid: a831cf98804f0a242828e8fe01bdeada, type: 3}
+    - {fileID: 0}

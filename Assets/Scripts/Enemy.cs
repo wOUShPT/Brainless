@@ -19,7 +19,8 @@ public class Enemy : MonoBehaviour
     [SerializeField]private LayerMask groundLayerMask;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
-
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip chargeClip;
     private enum States
     {
         Patrol, Charge
@@ -54,6 +55,10 @@ public class Enemy : MonoBehaviour
                 CheckGroundDetection();
                 if (canSeeThePlayer(agroDistance))
                 {
+                    if (audioSource.isPlaying)
+                        audioSource.PlayOneShot(chargeClip);
+                       
+                    
                     states = States.Charge;
                 }
                 _animator.SetTrigger("Patrol");
