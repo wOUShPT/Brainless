@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517652679661368131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.699, y: -0.28, z: 0}
+  m_LocalPosition: {x: 3.07, y: -4.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1517652680479007846}
@@ -186,7 +186,8 @@ MonoBehaviour:
     m_Bits: 1024
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
+  chargeClip: {fileID: 8300000, guid: 1bee64f2ea202fd4e8b8c1b855ac9eb7, type: 3}
 --- !u!95 &1899931576553980248
 Animator:
   serializedVersion: 3

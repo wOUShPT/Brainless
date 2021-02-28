@@ -108,6 +108,10 @@ public class Enemy : MonoBehaviour
         {
             Flip();
         }
+        if(raycastHit.collider.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            Flip();
+        }
     }
     private bool canSeeThePlayer(float distanceRaycast)
     {
